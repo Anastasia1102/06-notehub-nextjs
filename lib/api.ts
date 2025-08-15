@@ -16,15 +16,15 @@ const axiosInstance = axios.create({
 
 interface FetchNotesParams {
   page: number;
-  perPage: number;
+  perPage?: number;
   search?: string;
 }
 
 export interface FetchNotesResp {
-  page: number;
+  page?: number;
   notes: Note[];
   totalPages: number;
-  perPage: number;
+  perPage?: number;
 }
 
 export const fetchNotes = async ({ page, perPage, search }: FetchNotesParams): Promise<FetchNotesResp> => {
